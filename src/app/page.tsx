@@ -1,14 +1,15 @@
-"use client";
 import { signIn, useSession } from "next-auth/react";
 import React from "react";
+import TripSearch from "./components/TripSearch";
+import QuickSearch from "./components/QuickSearch";
+import RecommendedTrips from "./components/RecommendedTrips";
 
 export default function Home() {
-  const { data } = useSession();
-  console.log(data)
   return (
     <div>
-      <button onClick={()=>signIn()}>Login</button>
-      <h1>{data?.user?.name}</h1>
+     <TripSearch/>
+     <QuickSearch/>
+     <RecommendedTrips/>
     </div>
   )
 }
